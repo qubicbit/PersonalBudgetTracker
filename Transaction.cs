@@ -13,6 +13,27 @@ namespace PersonalBudgetTracker
         public DateOnly Date { get; set; }        // Datum då transaktionen inträffade
 
 
+        // Konstruktor – initierar egenskaperna vid skapande av en ny transaktion
+        public Transaction(string description, decimal amount, string category, DateOnly date)
+        {
+            Description = description;
+            Amount = amount;
+            Category = category;
+            Date = date;
+        }
+
+        // Visar detaljerad information om transaktionen i konsolen
+        public void ShowInfo()
+        {
+            Console.WriteLine("\nTransaktionsinformation:\n");
+            Console.WriteLine($"Datum: {Date}");
+            Console.WriteLine($"Beskrivning: {Description}");
+            Console.WriteLine($"Kategori: {Category}");
+            Console.WriteLine($"Belopp: {Amount}");
+            //Console.WriteLine($"Belopp: {Amount}");
+        }
+
+
 
     }
 }
