@@ -63,6 +63,10 @@ namespace PersonalBudgetTracker
                     break;
 
                 case "7":
+                    Helper.ShowTransactionsGroupedByCategory(budgetManager); // Visar statistik: antal transaktioner, total inkomst, total utgift
+                    break;
+
+                case "8":
                     Statistic.ShowStatistics(budgetManager); // Visar statistik: antal transaktioner, total inkomst, total utgift
                     break;
 
