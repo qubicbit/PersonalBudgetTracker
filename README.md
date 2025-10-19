@@ -65,4 +65,7 @@ Statistik visar både antal, total inkomst, total utgift och nettosumma.
 📦 GitHub-hantering
 Använd git add, git commit, git push för att spara och ladda upp ändringar.
 
-Håll README.md uppdaterad med nya funktioner eller instruktioner.
+
+## 🔹 Namn och datum
+**Namn:** Ehsan Sistani  
+**Datum:** Oktober 2025
