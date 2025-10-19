@@ -29,11 +29,8 @@ namespace PersonalBudgetTracker
             Console.WriteLine($"Datum: {Date}");
             Console.WriteLine($"Beskrivning: {Description}");
             Console.WriteLine($"Kategori: {Category}");
-            Console.WriteLine($"Belopp: {Amount}");
-            //Console.WriteLine($"Belopp: {Amount}");
+            MenuHelper.PrintColoredAmount(Amount, $"Belopp: {Amount}");
         }
-
-
 
     }
 }
