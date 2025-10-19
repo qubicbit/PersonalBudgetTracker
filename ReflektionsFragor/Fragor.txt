@@ -1,0 +1,21 @@
+Reflektion: 
+
+Jag började med att skriva kod direkt utan att skapa något klassdiagram. Min tanke var att göra det i efterhand, eftersom jag redan hade en viss bild av hur jag ville strukturera programmet. Tidigare övningar vi gjort var uppbyggda på liknande sätt, förutom menyval 6 och 7 som krävde mer avancerad logik.
+
+Anledningen till att jag valde bort att börja med UML-diagram var att jag under mini-UML-övningen märkte att jag ofta behövde gå tillbaka och ändra diagrammet när koden utvecklades. Därför kändes det mer effektivt att först skriva koden och sedan skapa diagrammet utifrån den färdiga strukturen. Hade jag börjat med diagrammet direkt, hade till exempel Helper-klassen och dess metoder inte funnits med från början. Jag kommer ändå att skapa ett diagram i efterhand för att få en tydligare projektbeskrivning.
+
+1. Hur hjälpte klasser och metoder dig att organisera programmet?
+
+Main hölls ren och lättläst tack vare att funktionalitet flyttades till metoder som kunde återanvändas.
+
+Klasserna Transaction och BudgetManager blev projektets kärna. När de väl var på plats blev det mycket enklare att vidareutveckla programmet.
+
+En stor tidsvinst kom från testdataklassen (LoadData) — jag slapp mata in transaktioner manuellt varje gång jag körde programmet.
+
+2. Vilken del av projektet var mest utmanande?
+
+Logiken kring att sortera och gruppera transaktioner efter kategori var svår att förstå i början. Men när jag väl satte mig med koden och testade olika lösningar, klarnade det.
+
+Att låta användaren välja en specifik transaktion var också utmanande. Det krävde både validering av inmatning och kontroll att transaktionen faktiskt existerade.
+
+Svårast var menyval 7, eftersom det krävde nya metoder som GroupBy(), ThenBy() och Dictionary. Jag fick lära mig hur dessa fungerar och hur de kan användas tillsammans för att strukturera data
