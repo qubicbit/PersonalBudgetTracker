@@ -13,7 +13,8 @@
             Console.WriteLine("4. Ta bort transaktion");
             Console.WriteLine("5. Visa info för en specifik transaktion");
             Console.WriteLine("6. Visa transaktioner per kategori");
-            Console.WriteLine("7. Visa statistik: antal transaktioner, total inkomst, total utgift");
+            Console.WriteLine("7. Visa alla transaktioner sorterade efter kategori");
+            Console.WriteLine("8. Visa statistik: antal transaktioner, total inkomst, total utgift");
             Console.WriteLine("0. Avsluta programmet");
             Console.Write("\nVälj ett alternativ (0-7): ");
         }
