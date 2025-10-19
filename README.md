@@ -37,8 +37,7 @@ Projektet är uppdelat i flera klasser för tydlighet och ansvarsfördelning:
 
 1. Klona projektet från GitHub:
    ```bash
-   git clone https://github.com/ditt-användarnamn/personal-budget-tracker.git
-
+   git clone https://github.com/qubicbit/PersonalBudgetTracker.git
 2. Öppna projektet i Visual Studio eller Visual Studio Code.
 
 Kör programmet: dotnet run
