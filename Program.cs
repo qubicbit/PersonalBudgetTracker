@@ -28,7 +28,6 @@ namespace PersonalBudgetTracker
                 MenuHelper.ClearConsole(); // Rensar konsolen efter varje menyval
             }
 
-            Helper.ShowTransactionsGroupedByCategory(budgetManager);
         }
 
         private static bool switchBlock(BudgetManager budgetManager, bool EndProgram)

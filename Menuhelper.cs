@@ -16,7 +16,7 @@
             Console.WriteLine("7. Visa alla transaktioner sorterade efter kategori");
             Console.WriteLine("8. Visa statistik: antal transaktioner, total inkomst, total utgift");
             Console.WriteLine("0. Avsluta programmet");
-            Console.Write("\nVälj ett alternativ (0-7): ");
+            Console.Write("\nVälj ett alternativ (0-8): ");
         }
 
         // Visar en meny med unika kategorier från transaktionslistan
