@@ -45,7 +45,7 @@ Diagrammet nedan visar klassernas ansvar och relationer i programmet.
 
 Flödesschemat visar hur användaren interagerar med programmet via menyval.docs
 
-![Flödesschema](../flowchart/flowchart.png)
+![Flödesschema](../flowchart/flowchart1.png)
 
 Relationer mellan klasserna visualiseras med beroendepilar (streckade med öppen spets) och aggregationssymboler (tom romb).
 
