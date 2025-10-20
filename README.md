@@ -48,7 +48,7 @@ Relationer mellan klasserna visualiseras med beroendepilar (streckade med öppen
 
 Flödesschemat visar hur användaren interagerar med programmet via menyval.
 
-<img src="./flowchart/flowchart.png" alt="Flödesschema" width="600"/>
+<img src="./flowchart/flowchart.png" alt="Flödesschema" width="900"/>
 
 ---
 
