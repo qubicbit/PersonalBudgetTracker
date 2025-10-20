@@ -39,6 +39,7 @@ Diagrammet nedan visar klassernas ansvar och relationer i programmet.
 
 ![UML-diagram](./docs/uml-diagram.png)
 
+
 Relationer mellan klasserna visualiseras med beroendepilar (streckade med öppen spets) och aggregationssymboler (tom romb).
 
 ---
@@ -47,7 +48,7 @@ Relationer mellan klasserna visualiseras med beroendepilar (streckade med öppen
 
 Flödesschemat visar hur användaren interagerar med programmet via menyval.
 
-<img src="./flowchart/flowchart.png" alt="Flödesschema" width="300"/>
+<img src="./flowchart/flowchart.png" alt="Flödesschema" width="600"/>
 
 ---
 
