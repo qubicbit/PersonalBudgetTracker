@@ -33,6 +33,25 @@ Projektet är uppdelat i flera klasser för tydlighet och ansvarsfördelning:
 
 ---
 
+## 🧱 Klassstruktur
+
+Diagrammet nedan visar klassernas ansvar och relationer i programmet.
+
+![UML-diagram](./docs/uml-diagram.png)
+
+
+Relationer mellan klasserna visualiseras med beroendepilar (streckade med öppen spets) och aggregationssymboler (tom romb).
+
+---
+
+## 🔁 Flödesschema
+
+Flödesschemat visar hur användaren interagerar med programmet via menyval.
+
+<img src="./flowchart/flowchart.png" alt="Flödesschema" width="900"/>
+
+---
+
 ## 🚀 Kom igång
 
 1. Klona projektet från GitHub:
