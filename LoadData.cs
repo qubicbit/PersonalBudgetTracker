@@ -36,10 +36,10 @@
                 budgetManager.AddTransaction(t);
             }
 
-
             Console.WriteLine("Laddar in testdata...");
 
             return true; // Bekräftar att data har laddats
         }
+
     }
 }
