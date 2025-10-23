@@ -41,7 +41,7 @@ namespace PersonalBudgetTracker
 
                 case "2":
                     var transactions = budgetManager.Transactions;
-                    budgetManager.ShowTransactions(transactions); // Visar alla transaktioner
+                    budgetManager.ShowTransactions(); // Visar alla transaktioner
                     break;
 
                 case "3":

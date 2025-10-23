@@ -45,7 +45,7 @@ namespace PersonalBudgetTracker
             var transactions = budgetManager.Transactions;
 
             // visar alla transaktioner
-            budgetManager.ShowTransactions(transactions);
+            budgetManager.ShowTransactions();
 
             // Hämtar transaktionen som användaren vill ta bort via index
             var transaction = GetTransactionByIndex(budgetManager);
@@ -107,10 +107,10 @@ namespace PersonalBudgetTracker
             Console.WriteLine("\nVälj en transaktion att visa mer information om:");
 
             // hämtar alla tillgänliga tranaktioner
-            var transactions = budgetManager.Transactions;
-
+            //var transactions = budgetManager.Transactions;
+            
             // visar alla transaktioner
-            budgetManager.ShowTransactions(transactions);
+            budgetManager.ShowTransactions();
 
             // hämtar en transaktion via metoden GetTransactionByIndex som användaren valt via index. 
             var transaction = GetTransactionByIndex(budgetManager);

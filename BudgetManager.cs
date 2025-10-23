@@ -20,10 +20,10 @@ namespace PersonalBudgetTracker
             Transactions.Add(transaction);
         }
 
-        // Skriver ut alla transaktioner med index, datum, beskrivning, kategori och belopp ocg färg
-        public void ShowTransactions(List<Transaction> transactions)
+        // Skriver ut alla transaktioner med index, datum, beskrivning, kategori och belopp och färg
+        public void ShowTransactions()
         {
-            if (transactions == null || transactions.Count == 0) // tom eller inga transaktioner
+            if (Transactions == null || Transactions.Count == 0) // tom eller inga transaktioner
             {
                 Console.WriteLine("Inga transaktioner att visa.\n");
                 return;
@@ -31,7 +31,7 @@ namespace PersonalBudgetTracker
 
            Console.WriteLine("\nTransaktioner:");
             int i = 0;
-            foreach (var transaction in transactions)
+            foreach (var transaction in Transactions)
             {
                 string text = $"[{i++}] {transaction.Date}: {transaction.Description}, {transaction.Category}, {transaction.Amount} kr";
                 MenuHelper.PrintColoredAmount(transaction.Amount, text);
