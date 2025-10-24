@@ -5,7 +5,7 @@ using System.Transactions;
 
 namespace PersonalBudgetTracker
 {
-    // Helper – innehåller metoder för att hantera inmatning, visning och borttagning av transaktioner
+    // Helper – innehåller metoder för att hantera inmatning
     public static class Helper
     {
         // Skapar en ny transaktion genom att fråga användaren om beskrivning, belopp, kategori och datum
