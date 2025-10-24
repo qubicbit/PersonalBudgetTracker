@@ -10,7 +10,6 @@ namespace PersonalBudgetTracker
         {
             Console.OutputEncoding = System.Text.Encoding.UTF8; // Aktiverar stöd för symboler i konsolen (t.ex. emojis)
 
-
             BudgetManager budgetManager = new(); // Skapar en instans av BudgetManager
 
             LoadData.TransactionsData(budgetManager); // Laddar in transaktionsdata till budgetManager
@@ -19,9 +18,13 @@ namespace PersonalBudgetTracker
 
             bool EndProgram = false; // Flagga för att avsluta programmet
 
+            // Viktigt!.Använd listan Transactions
+            budgetManager.SetActiveList(budgetManager.Transactions);
+
+
             while (!EndProgram) // Loopar tills användaren väljer att avsluta
             {
-                MenuHelper.ShowMainMenu(); // Visar huvudmenyn
+                MenuHelper.Menu(); // Visar huvudmenyn
 
                 EndProgram = switchBlock(budgetManager, EndProgram); // Kör menyval och uppdaterar avslutsflagga
 
@@ -35,13 +38,12 @@ namespace PersonalBudgetTracker
             switch (MenuHelper.ReadMainMenuChoice()) // Läser användarens menyval
             {
                 case "1":
-                    var transaction = Helper.GetTransactionInput(); // Hämtar användarens inmatning som en transaktion
-                    budgetManager.AddTransaction(transaction); // Lägger till transaktionen i listan
+                    var newTransaction = Helper.GetInput(); // Hämtar användarens inmatning som en transaktion
+                    budgetManager.AddTransaction(newTransaction); // Lägger till transaktionen i listan
                     break;
 
                 case "2":
-                    var transactions = budgetManager.Transactions;
-                    budgetManager.ShowTransactions(transactions); // Visar alla transaktioner
+                    budgetManager.ShowTransactions(); // Visar alla transaktioner
                     break;
 
                 case "3":
@@ -50,23 +52,23 @@ namespace PersonalBudgetTracker
                     break;
 
                 case "4":
-                    Helper.DeleteTransactionByIndex(budgetManager); // Tar bort en transaktion baserat på index
+                    budgetManager.DeleteTransaction(); // Tar bort en transaktion baserat på index
                     break;
 
                 case "5":
-                    Helper.ShowTransactionInfo(budgetManager); // Visar detaljerad information om en specifik transaktion
+                   budgetManager.ShowTransactionInfo(); // Visar detaljerad information om en specifik transaktion
                     break;
 
                 case "6":
-                    Helper.ShowTransactionsBySelectedCategoryLoop(budgetManager); // Visar transaktioner per kategori med färgkodning och möjlighet att välja flera kategorier
+                    budgetManager.TransactionsByCategoryLoop(); // Visar transaktioner per kategori med färgkodning och möjlighet att välja flera kategorier
                     break;
 
                 case "7":
-                    Helper.ShowTransactionsGroupedByCategory(budgetManager); // Visar statistik: antal transaktioner, total inkomst, total utgift
+                    budgetManager.TransactionsGroupedByCategory(); // Visar statistik: antal transaktioner, total inkomst, total utgift
                     break;
 
                 case "8":
-                    Statistic.ShowStatistics(budgetManager); // Visar statistik: antal transaktioner, total inkomst, total utgift
+                    budgetManager.ShowStatistics(); // Visar statistik: antal transaktioner, total inkomst, total utgift
                     break;
 
                 case "0":

@@ -4,7 +4,7 @@
     public static class MenuHelper
     {
         // Visar huvudmenyn med alla tillgängliga alternativ
-        public static void ShowMainMenu()
+        public static void Menu()
         {
             Console.WriteLine("----Personal Budget Tracker----");
             Console.WriteLine("1. Lägg till transaktion");
@@ -18,27 +18,7 @@
             Console.WriteLine("0. Avsluta programmet");
             Console.Write("\nVälj ett alternativ (0-8): ");
         }
-
-        // Visar en meny med unika kategorier från transaktionslistan
-        public static List<string> ShowCategoryMenu(BudgetManager budgetManager)
-        {
-
-            var categories = budgetManager.Transactions // sorterar transaktioner efter katergorier. 
-              .Select(t => t.Category)      // hämta alla katergorier i transaktioner
-              .Distinct()                   // Tar bort alla upprepade kategorie
-              .OrderBy(c => c)              // sortera dem alfabetiskt
-              .ToList();                    // skicka in till listan categories
-
-
-
-            Console.WriteLine("\nTillgängliga kategorier:\n");
-            for (int i = 0; i < categories.Count; i++)
-            {
-                Console.WriteLine($"[{i}] {categories[i]}"); // printa ut kategorin i listan categories
-            }
-
-            return categories;
-        }
+         
 
         // Läser och returnerar användarens menyval
         public static string ReadMainMenuChoice()
