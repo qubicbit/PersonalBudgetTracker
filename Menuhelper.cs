@@ -21,7 +21,7 @@
          
 
         // Läser och returnerar användarens menyval
-        public static string ReadMainMenuChoice()
+        public static string ReadChoice()
         {
             return Console.ReadLine().Trim();
         }

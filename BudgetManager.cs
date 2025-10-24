@@ -52,7 +52,7 @@ namespace PersonalBudgetTracker
             }
         }
 
-        // Räknar ut total balans genom att summera alla belopp i li listan Transactions
+        // summerar alla belopp i listan Transactions
         public decimal CalculateBalance()
         {
             return _activeList.Sum(t => t.Amount);
@@ -108,7 +108,8 @@ namespace PersonalBudgetTracker
             {
                 Console.Write("\nAnge index: ");
                 bool isValidInput = int.TryParse(Console.ReadLine(), out int index);
-
+                
+                //Existerar en transaktion?
                 if (isValidInput && index >= 0 && index < _activeList.Count)
                     return index;
                 else
@@ -149,7 +150,7 @@ namespace PersonalBudgetTracker
             // hämtar en transaktion via metoden GetTransaction() som användaren valt via index. 
             var transaction = GetTransaction();
 
-            if (transaction != null) // om transaktionen inte är tom/"" 
+            if (transaction != null)     //kolla om transaktionen inte är tom/"" 
                 transaction.ShowInfo(); // visa detalj om en transaktion
             else
                 Console.WriteLine("\nIngen giltig transaktion hittades.\n");
@@ -161,7 +162,8 @@ namespace PersonalBudgetTracker
         {
             while (true)
             {
-                TransactionsByCategory(); // visar meny för kategori och hanterar logiken via index om en kategori väljs
+                // visar meny för kategori och hanterar logiken via index om en kategori väljs
+                TransactionsByCategory(); 
 
                 Console.Write("Vill du visa en annan kategori? (j/n): ");
                 string askYesOrNo = Console.ReadLine().ToLower().Trim();
@@ -176,7 +178,7 @@ namespace PersonalBudgetTracker
         public void TransactionsByCategory()
         {
             // Hämtar och visar tillgängliga kategorier
-            // skapar en lokal variabel categories. hämtar en lista över alla kategorier i transactions, kopierar in i categories
+            // skapar en lokal variabel categories. Hämtar en lista över alla kategorier i transactions, kopierar in i categories
 
             var categories = Transactions // sorterar transaktioner efter katergorier. 
             .Select(t => t.Category)      // hämta alla katergorier i transaktioner
@@ -202,8 +204,8 @@ namespace PersonalBudgetTracker
 
             //--------------------filtrera och sortera--------------
 
-            //steg 1.Filter(Where()): alla transaktioner med avseende på den valda category i en transaktion(t)
-            //behövs ingen tom lista här.where() går söker direkt i listan Transactions.
+            //steg 1. Filter(Where()): Alla transaktioner med avseende på den valda category i en transaktion(t)
+            //behövs ingen tom lista här, where() går söker direkt i listan Transactions.
             var transactionsByCategory = Transactions.Where(t => t.Category.Equals(selectedCategory, StringComparison.OrdinalIgnoreCase)) // Jämför strängarna utan att bry sig om versaler/gemener, Skiftlägesokänslig
                                                      .ToList(); // skapar och sparar alla de transaktioner som uppfyller villkoret selectedCategory i listan transactionsByCategory
 
@@ -235,20 +237,20 @@ namespace PersonalBudgetTracker
         }
 
 
-        // Visar alla transaktioner sorterade efter kategori och datum, med totalsummor, Samma princip som ovan
+        //  Visar alla transaktioner grupperade efter kategori och sorterade efter datum, med totalsummor
         public void TransactionsGroupedByCategory()
         {
             // sorterade efter kategori och datum
-            var grouped = Transactions.OrderBy(t => t.Category)      // sorterar hela listan efter kategori
-                 .ThenBy(t => t.Date)                               // sorterar inom varje kategorin efter datum
-                 .GroupBy(t => t.Category);                         // grupperar transaktioner (delar upp) efter kategori, ej sortering, retur på en sekvens av grupper.
+            var grouped = Transactions.OrderBy(t => t.Category)      // Sorterar hela listan efter kategori
+                 .ThenBy(t => t.Date)                                // Ordnar sedan stigande efter datum
+                 .GroupBy(t => t.Category);                         //  grupperar (delar upp) efter kategori, ej sortering, retur på en sekvens av grupper.
                                                                     // varje grupp har key: kategori och en uppsättning av object. Typen för grouped:  IEnumerable<IGrouping<string, Transaction>> grouped
 
 
             // en ny Dictionary för att kunna spara totalGroup, som ska printas ut senare
             var totalsPerCategory = new Dictionary<string, decimal>();
 
-            foreach (var group in grouped) // loop över alla gruppkategori som finns i grouped  
+            foreach (var group in grouped) // loop över alla gruppkategorier som finns i grouped  
             {
                 decimal totalGroup = 0; // nollställer summan för varje gruppkategori
 
@@ -301,7 +303,7 @@ namespace PersonalBudgetTracker
             //Summerar alla utgifter
             decimal totalExpense = Transactions.Sum(t => t.Amount < 0 ? t.Amount : 0);
 
-            // Netto
+            // Netto balance för alla transaktioner
             decimal totalsaldo = CalculateBalance();
 
             // Skriver ut statistiköversikt i konsolen

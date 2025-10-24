@@ -26,9 +26,8 @@ Projektet är uppdelat i flera klasser för tydlighet och ansvarsfördelning:
 | `Program.cs`        | Huvudloop, menyhantering och programflöde |
 | `Transaction.cs`    | Representerar en enskild transaktion |
 | `BudgetManager.cs`  | Hanterar listan av transaktioner och logik |
-| `Helper.cs`         | Innehåller metoder för användarinteraktion (t.ex. inmatning, borttagning) |
-| `MenuHelper.cs`     | Visar menyer, rensar konsolen, visar hjälp |
-| `Statistic.cs`      | Visar statistik över transaktioner |
+| `Helper.cs`         | Innehåller metoder för att hantera inmatning |
+| `MenuHelper.cs`     | Visar menyer, rensar konsolen|
 | `LoadData.cs`       | (Valfritt) Laddar in testdata eller tidigare sparad data |
 
 ---
@@ -37,7 +36,7 @@ Projektet är uppdelat i flera klasser för tydlighet och ansvarsfördelning:
 
 Diagrammet nedan visar klassernas ansvar och relationer i programmet.
 
-![UML-diagram](./docs/uml-diagram.png)
+![UML-diagram](./docs/uml-diagram2.png)
 
 
 Relationer mellan klasserna visualiseras med beroendepilar (streckade med öppen spets) och aggregationssymboler (tom romb).

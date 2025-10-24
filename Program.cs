@@ -35,7 +35,7 @@ namespace PersonalBudgetTracker
 
         private static bool switchBlock(BudgetManager budgetManager, bool EndProgram)
         {
-            switch (MenuHelper.ReadMainMenuChoice()) // Läser användarens menyval
+            switch (MenuHelper.ReadChoice()) // Läser användarens menyval
             {
                 case "1":
                     var newTransaction = Helper.GetInput(); // Hämtar användarens inmatning som en transaktion
@@ -64,7 +64,7 @@ namespace PersonalBudgetTracker
                     break;
 
                 case "7":
-                    budgetManager.TransactionsGroupedByCategory(); // Visar statistik: antal transaktioner, total inkomst, total utgift
+                    budgetManager.TransactionsGroupedByCategory(); // Visar alla transaktioner grupperade efter kategori och sorterade efter datum,
                     break;
 
                 case "8":
